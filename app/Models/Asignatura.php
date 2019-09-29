@@ -1,0 +1,33 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Asignatura extends Model
+{
+    protected $table = 'asignaturas';
+
+    protected $fillable = [
+        'nombre',
+        'credito',
+        'estudiante_id',  
+    
+    ];
+
+        public function programa(){
+
+        return $this->hasMany('App\Models\Programa');
+    }
+    
+     public function estudiante(){
+
+    	return $this->BelongTo('App\Models\Estudiante');
+    }
+
+    public function grupos(){
+    
+        return $this->belongsToMany('App\Models\Grupo');
+    }
+
+ }
