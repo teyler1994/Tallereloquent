@@ -15,6 +15,12 @@ class Estudiante extends Model
     
     ];
 
+       public function comentarios(){
+
+        return $this->morphMany('App\Models\Comentario', 'comentariable');
+    }
+
+
     public function programas(){
         return $this->hasManyThrough('App\Models\Programa','App\Models\Asignatura');
     }
@@ -28,6 +34,6 @@ class Estudiante extends Model
     	return $this->hasMany('App\Models\Asignatura');
     }
 
-    
+  
   
 }

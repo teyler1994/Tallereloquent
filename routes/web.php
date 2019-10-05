@@ -24,3 +24,15 @@
  Route::post('/grupo', 'GrupoController@store');
 
  Route::get('/estudiante', 'EstudianteController@consultarprograma');
+
+ Route::get('/mensaje', 'ComentarioController@index');
+
+ Route::post('/mensaje', 'ComentarioController@store');
+
+ Route::get('/mensajeasignatura', 'ComentarioController@indexasignatura');
+
+ Route::post('/mensajeasignatura', 'ComentarioController@storeasignatura');
+
+ Route::get('/mensajeprograma', 'ComentarioController@indexprograma');
+
+ Route::post('/mensajeprograma', 'ComentarioController@storeprograma');

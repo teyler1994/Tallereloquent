@@ -15,12 +15,17 @@ class Programa extends Model
     
     ];
 
+      public function comentarios(){
+
+        return $this->morphMany('App\Models\Comentario', 'comentariable');
+    }
 
 
     public function asignatura(){
 
     	return $this->BelongTo('App\Models\Asignatura');
     }
+
 
    
 }

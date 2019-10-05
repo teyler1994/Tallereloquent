@@ -15,6 +15,11 @@ class Asignatura extends Model
     
     ];
 
+         public function comentarios(){
+
+        return $this->morphMany('App\Models\Comentario', 'comentariable');
+    }
+
         public function programa(){
 
         return $this->hasMany('App\Models\Programa');
@@ -29,5 +34,6 @@ class Asignatura extends Model
     
         return $this->belongsToMany('App\Models\Grupo');
     }
+
 
  }
